@@ -5,6 +5,7 @@ Created on Mon Sep 20 18:12:21 2021
 @author: abdullahal.mamun1
 """
 import pandas as pd
+import numpy as np
 
 def read_data():
     traindf = pd.read_csv('data/fashion-mnist_train.csv')
@@ -12,23 +13,34 @@ def read_data():
     return traindf, testdf
 
 
-def preprocess(classifier):
+def readAndPreprocess(dryrun=False, classifier=None):
     traindf, testdf = read_data()
+        
 
     print(traindf.head())
     print(testdf.head())
     
     train, test = traindf.values, testdf.values
-    Ytrain = train[:,0]
+    if dryrun:
+        train = train[:100,:]
+        test = test[:100,:]
+    Ytrain = train[:,0].astype(int)
     Xtrain = train[:,1:]
-    Ytest = test[:,0]
+    Ytest = test[:,0].astype(int)
     Xtest = test[:, 1:]
     
-    if classifier == "binary":
-        Ytrain = Ytrain%2
-        Ytest = Ytest%2
-        Ytrain[Ytrain==0] = -1
-        Ytest[Ytest==0]= -1
+    #scaling the pixel values between 0 and 1
+    Xtrain = Xtrain/255.0
+    Xtest = Xtest/255.0
     
-    return Xtrain, Ytrain, Xtrain, Xtest
+    #if classifier == "binary":
+    Ytrain_binary = Ytrain%2
+    Ytest_binary = Ytest%2
+    Ytrain_binary[Ytrain_binary==0] = -1
+    Ytest_binary[Ytest_binary==0]= -1
+    
+    #np.savetxt("multilabels.csv", Ytrain, delimiter=",")
+    #np.savetxt("binlabels.csv", Ytrain_binary, delimiter=",")
+    
+    return Xtrain, Ytrain, Xtest, Ytest, Ytrain_binary, Ytest_binary
 
