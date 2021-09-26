@@ -14,7 +14,7 @@ from datamanager import read_data
 
 def main():
     np.set_printoptions(suppress=True)
-    dryrun = False
+    dryrun = True
     
     Xtrain, Ytrain_multi, Xtest, Ytest_multi, Ytrain_bin, Ytest_bin =  readAndPreprocess(dryrun=dryrun) #method from datamanager
     #the labels were already shuffled in the dataset, so we are not going to shuffle here.
@@ -23,17 +23,17 @@ def main():
     Ytest = Ytest_bin
     #return
     #5.1a - standard and PA for binary classifier
-    standard_binary(Xtrain, Ytrain, Xtest, Ytest, 50, "5.1a")
+    #standard_binary(Xtrain, Ytrain, Xtest, Ytest, 50, "5.1a")
     #pa_binary(Xtrain, Ytrain, Xtest, Ytest, 50, "5.1a")
-    return
+    #return
     #5.1b,c
-    standard_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1b")
-    pa_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1b")
+    #standard_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1b")
+    #pa_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1b")
     
-    averaged_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1c")
+    #averaged_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1c")
     
     #5.1d 
-    general_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1d", dryrun)
+    #general_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1d", dryrun)
     
     
     #using the simpler names for the multiclass labels for now  
@@ -42,8 +42,9 @@ def main():
     
     #5.2a - standard and PA for multiclass classifier
     standard_multiclass(Xtrain, Ytrain, Xtest, Ytest, 50, "5.2a")
+    #return
     pa_multiclass(Xtrain, Ytrain, Xtest, Ytest, 50, "5.2a")
-    
+    return
     #5.2b,c
     standard_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2b")
     pa_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2b")
