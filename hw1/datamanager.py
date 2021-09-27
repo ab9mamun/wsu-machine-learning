@@ -22,8 +22,8 @@ def readAndPreprocess(dryrun=False, classifier=None):
     
     train, test = traindf.values, testdf.values
     if dryrun:
-        train = train[:2000,:]
-        test = test[:1000,:]
+        train = train[:200,:]
+        test = test[:100,:]
     Ytrain = train[:,0].astype(int)
     Xtrain = train[:,1:]
     Ytest = test[:,0].astype(int)

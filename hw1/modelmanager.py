@@ -41,6 +41,7 @@ def online_learning_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, algorithm, ques
         
         if quesNo == "5.1b" or iteration == epochs-1 : #need to calculate test accuracies
             test_corr = 0
+            print('/', end='')
             for t in range(Xtest.shape[0]):
                 x, y = Xtest[t], Ytest[t]
                 yhat = np.sign(np.dot(w,x))
@@ -71,8 +72,9 @@ def online_learning_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, algorithm, 
     k = 10
     w = np.random.uniform(-0.5, 0.5, (k,d))
     #w = np.zeros((d,))
-    accuracies = []
-    mistakes = []
+    train_accuracies = []
+    train_mistakes = []
+    test_accuracies = []
     prods = [0]*k
     #shuffle()
     for iteration in range(epochs):
@@ -132,15 +134,38 @@ def online_learning_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, algorithm, 
                 correct+=1
                 if t % (n//20) == 0:
                     print('+',end='')
-            
-        print()   
-        acc = correct/n
-        print("Training iter:{}/{}, acc={}".format(iteration+1, epochs,round(acc,4)))
-        accuracies.append(acc)
-        mistakes.append(n-correct)
         
-    print("Accuracies over iterations: ",accuracies)
-    return w
+        train_acc = correct/n
+        if quesNo == "5.2b" or iteration == epochs-1 : #need to calculate test accuracies
+            test_corr = 0
+            print('/',end='')
+            for t in range(Xtest.shape[0]):
+                x, y = Xtest[t], Ytest[t]
+                for y_var in range(k):
+                    prods[y_var] = np.sum(np.dot(w[y_var], x))
+                yhat = np.argmax(prods)
+                
+                if yhat != y:
+                    if t % (n//10) == 0:
+                        print('-',end='')
+                else:
+                    if t % (n//10) == 0:
+                        print('+',end='')
+                    test_corr+=1
+                    
+            test_acc = test_corr/Xtest.shape[0]
+            print("\nTraining iter:{}/{}, train_acc={}, test_acc={}".format(iteration+1, epochs,round(train_acc,4), round(test_acc,4)))
+            test_accuracies.append(test_acc)
+            
+        elif quesNo in  ["5.2a", "5.2d"]:
+            # no need to calculate test accuracies
+            print("\nTraining iter:{}/{}, train_acc={}".format(iteration+1, epochs,round(train_acc,4)))
+            
+        train_accuracies.append(train_acc)
+        train_mistakes.append(n-correct)
+        
+    print("Final test accuracy: ",test_accuracies[-1])
+    return w, test_accuracies[-1]
 
 
 
@@ -205,7 +230,7 @@ def online_learning_averaged_binary(Xtrain, Ytrain, Xtest, Ytest, epochs):
         #mistakes.append(n-correct)
         
     print("Test accuracies over iterations: ",test_accuracies)
-    return w-u/c
+    return w-u/c, test_accuracies[-1]
 
 '''
 Adapted from Hal's Algorithm 7- AveragedPerceptronTrain
@@ -279,33 +304,33 @@ def online_learning_averaged_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs):
         #mistakes.append(n-correct)
         
     print("Test accuracies over iterations: ",test_accuracies)
-    return w-u/c
+    return w-u/c, test_accuracies[-1]
 
 def standard_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo):
     print("Running the standard_binary for Q", quesNo)
-    w = online_learning_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, "standard", quesNo)
+    w, test_acc = online_learning_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, "standard", quesNo)
 
 
 def standard_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo):
     print("Running the standard_multiclass for Q", quesNo)
-    w = online_learning_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, "standard", quesNo)
+    w, test_acc = online_learning_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, "standard", quesNo)
 
 
 def pa_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo):
     print("Running the pa_binary for Q", quesNo)
-    w = online_learning_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, "pa", quesNo)
+    w, test_acc = online_learning_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, "pa", quesNo)
 
 def pa_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo):
     print("Running the pa_multiclass for Q", quesNo)
-    w = online_learning_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, "pa", quesNo)
+    w, test_acc = online_learning_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, "pa", quesNo)
 
 def averaged_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo):
     print("Running the averaged_binary for Q", quesNo)
-    w = online_learning_averaged_binary(Xtrain, Ytrain, Xtest, Ytest, epochs)
+    w, test_acc = online_learning_averaged_binary(Xtrain, Ytrain, Xtest, Ytest, epochs)
 
 def averaged_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo):
     print("Running the averaged_multiclass for Q", quesNo)
-    w = online_learning_averaged_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs)
+    w, test_acc = online_learning_averaged_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs)
 
 
 def general_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo, dryrun):
