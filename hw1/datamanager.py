@@ -17,8 +17,8 @@ def readAndPreprocess(dryrun=False, classifier=None):
     traindf, testdf = read_data()
         
 
-    print(traindf.head())
-    print(testdf.head())
+    #print(traindf.head())
+    #print(testdf.head())
     
     train, test = traindf.values, testdf.values
     if dryrun:
