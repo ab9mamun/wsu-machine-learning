@@ -30,7 +30,7 @@ def main():
     #standard_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1b")
     #pa_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1b")
     
-    #averaged_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1c")
+    averaged_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1c")
     
     #5.1d 
     #general_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1d", dryrun)
@@ -41,18 +41,18 @@ def main():
     Ytest = Ytest_multi
     
     #5.2a - standard and PA for multiclass classifier
-    standard_multiclass(Xtrain, Ytrain, Xtest, Ytest, 50, "5.2a")
+    #standard_multiclass(Xtrain, Ytrain, Xtest, Ytest, 50, "5.2a")
     #return
-    pa_multiclass(Xtrain, Ytrain, Xtest, Ytest, 50, "5.2a")
-    return
+    #pa_multiclass(Xtrain, Ytrain, Xtest, Ytest, 50, "5.2a")
+    
     #5.2b,c
-    standard_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2b")
-    pa_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2b")
+    #standard_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2b")
+    #pa_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2b")
     
     averaged_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2c")
     
     #5.d 
-    general_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.d", dryrun)
+    #general_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.d", dryrun)
     
     
     
