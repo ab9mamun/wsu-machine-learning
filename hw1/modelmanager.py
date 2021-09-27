@@ -5,6 +5,7 @@
 import numpy as np
 from sklearn.utils import shuffle
 from copy import deepcopy
+import matplotlib.pyplot as plt
 
 def online_learning_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, algorithm, quesNo):
     
@@ -335,9 +336,49 @@ def averaged_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo):
 
 def general_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo, dryrun):
     print("Running the general_binary for Q", quesNo)
+    training_example_counts = [(i+1)*100 for i in range(20)]
+    test_accuracies = []
+    for t_idx in range(20):
+        
+        Xtrain_temp = Xtrain[:training_example_counts[t_idx], :]
+        Ytrain_temp = Ytrain[:training_example_counts[t_idx]]
+        w, test_acc = online_learning_binary(Xtrain_temp, Ytrain_temp, Xtest, Ytest, epochs, "standard", quesNo)
+        test_accuracies.append(test_acc)
     
+    plt.plot(training_example_counts, test_accuracies)
+    # naming the x axis
+    plt.xlabel('# training examples')
+    # naming the y axis
+    plt.ylabel('test accuracy')
+     
+    # giving a title to my graph
+    plt.title('General learning curve for standard binary perceptron')
+     
+    # function to show the plot
+    plt.show()
+        
 
 
 def general_multiclass(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo, dryrun):
     print("Running the general_multiclass for Q", quesNo)
+    training_example_counts = [(i+1)*100 for i in range(20)]
+    test_accuracies = []
+    for t_idx in range(20):
+        
+        Xtrain_temp = Xtrain[:training_example_counts[t_idx], :]
+        Ytrain_temp = Ytrain[:training_example_counts[t_idx]]
+        w, test_acc = online_learning_multiclass(Xtrain_temp, Ytrain_temp, Xtest, Ytest, epochs, "standard", quesNo)
+        test_accuracies.append(test_acc)
+    
+    plt.plot(training_example_counts, test_accuracies)
+    # naming the x axis
+    plt.xlabel('# training examples')
+    # naming the y axis
+    plt.ylabel('test accuracy')
+     
+    # giving a title to my graph
+    plt.title('General learning curve for standard multiclass perceptron')
+     
+    # function to show the plot
+    plt.show()
         

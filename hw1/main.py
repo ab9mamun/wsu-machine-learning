@@ -14,7 +14,7 @@ from datamanager import read_data
 
 def main():
     np.set_printoptions(suppress=True)
-    dryrun = True
+    dryrun = False
     
     Xtrain, Ytrain_multi, Xtest, Ytest_multi, Ytrain_bin, Ytest_bin =  readAndPreprocess(dryrun=dryrun) #method from datamanager
     #the labels were already shuffled in the dataset, so we are not going to shuffle here.
@@ -30,7 +30,7 @@ def main():
     #standard_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1b")
     #pa_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1b")
     
-    averaged_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1c")
+    #averaged_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1c")
     
     #5.1d 
     #general_binary(Xtrain, Ytrain, Xtest, Ytest, 20, "5.1d", dryrun)
@@ -49,10 +49,10 @@ def main():
     #standard_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2b")
     #pa_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2b")
     
-    averaged_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2c")
+    #averaged_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2c")
     
     #5.d 
-    #general_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.d", dryrun)
+    general_multiclass(Xtrain, Ytrain, Xtest, Ytest, 20, "5.2d", dryrun)
     
     
     
