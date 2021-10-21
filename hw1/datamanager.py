@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Sep 20 18:12:21 2021
-
-@author: abdullahal.mamun1
+@author: Abdullah Mamun
 """
 import pandas as pd
 import numpy as np
@@ -21,7 +19,7 @@ def readAndPreprocess(dryrun=False, classifier=None):
     #print(testdf.head())
     
     train, test = traindf.values, testdf.values
-    if dryrun:
+    if dryrun: # it is just to check if every function is working. but generally it will be false.
         train = train[:200,:]
         test = test[:100,:]
     Ytrain = train[:,0].astype(int)

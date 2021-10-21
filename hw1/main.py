@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Sep 20 18:01:54 2021
 
-@author: abdullahal.mamun1
+@author: Abdullah Mamun
 """
 
 from modelmanager import *
@@ -11,6 +10,9 @@ import numpy as np
 
 import pandas as pd
 from datamanager import read_data
+'''
+python version 3.7.4
+'''
 
 def main():
     np.set_printoptions(suppress=True)

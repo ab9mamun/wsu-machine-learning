@@ -387,10 +387,10 @@ def general_binary(Xtrain, Ytrain, Xtest, Ytest, epochs, quesNo, dryrun):
     print("==================================================================")
     print("Q ",quesNo,"\n-------------")
     print("Running the general_binary for Q", quesNo)
-    training_example_counts = [(i+1)*100 for i in range(20)]
+    training_example_counts = [(i+1)*100 for i in range(600)]
     test_accuracies = []
     print("Printing (#train_examples,test_acc):",end='')
-    for t_idx in range(20):
+    for t_idx in range(600):
         
         Xtrain_temp = Xtrain[:training_example_counts[t_idx], :]
         Ytrain_temp = Ytrain[:training_example_counts[t_idx]]
@@ -429,6 +429,10 @@ def plot_graph(x, y, xlabel, ylabel, title):
     plt.ylabel(ylabel)
      
     plt.title(title)
-     
+    try:
+        plt.savefig('{}.png'.format(title.replace('.','_')))
+    except:
+        pass
     plt.show()
+    
         
