@@ -4,7 +4,7 @@
 """
 import numpy as np
 from math import log2
-from copy import copy
+from copy import copy,deepcopy
 verbose = False
 class Node:
     def __init__(self):
@@ -15,6 +15,8 @@ class Node:
         self.threshold = None
         self.parent = None
         self.isleaf = None
+        self.plus = None
+        self.minus = None
     
 
 
@@ -93,6 +95,8 @@ def ID3(parent, X, Y, thresholdlist):
         
     plus = np.count_nonzero(Y)
     minus = n-plus
+    
+    
     if n == plus:  #if all examples are positive
         root.label = 1
         root.isleaf = True
@@ -110,6 +114,8 @@ def ID3(parent, X, Y, thresholdlist):
         root.isleaf = True
         return root
     
+    root.plus = plus
+    root.minus = minus
     
     feature, threshold = argmax_ig(X, Y, thresholdlist)
     root.splitfeature = feature
@@ -189,5 +195,66 @@ def run(Xtrain, Ytrain, Xval, Yval, Xtest, Ytest, problemNo):
     
     print("Val acc:",valacc, 'Test acc:',testacc)
     
+    
+    
+    
+
+def copy_tree(tree):
+    if tree is None:
+        return None
+    
+    tree2 = deepcopy(tree)
+    tree2.left = copy_tree(tree.left)
+    tree2.right = copy_tree(tree.right)
+    return tree2
+    
+def prune_tree(tree, subtree, Xval, Yval, bestvalacc, path):
+    
+    if subtree.isleaf:
+        return tree, bestvalacc
+    tree, bestvalacc = prune_tree(tree, subtree.left, Xval, Yval, bestvalacc, path+"->L")
+    tree, bestvalacc = prune_tree(tree, subtree.right, Xval, Yval, bestvalacc, path+"->R")
+    
+    #tree2 = copy_tree(tree)
+    subtree.isleaf = True
+    subtree.label = int(subtree.plus >=subtree.minus)
+    
+    valacc = evaluate(tree, Xval, Yval)
+    if valacc > bestvalacc:  #pruning producing good result
+        print("==IMPROVEMENT==\nFound better tree by pruning the branch below ", path)
+        print("Best val acc updated: from {} to {}".format(bestvalacc, valacc))
+        bestvalacc = valacc
+    
+    else: #did not find a better result, so rollback the change
+        subtree.isleaf = False
+        subtree.label = None
+        
+    
+    return tree, bestvalacc
+    
+        
+    
+    
+
+def run_with_pruning(Xtrain, Ytrain, Xval, Yval, Xtest, Ytest, problemNo):
+    print()
+    print()
+    print("Running experiment for", problemNo)
+    
+    print("Building the tree..")
+    tree = create_decision_tree(Xtrain, Ytrain) #tree construction is done
+    print("Tree has been built")
+    valacc = evaluate(tree, Xval, Yval)
+    print("Starting the pruning process by recursion...")
+    print()
+    
+    final_tree, _ = prune_tree(tree, tree, Xval, Yval, valacc, "root")
+    print("Pruning is complete")
+    valacc = evaluate(final_tree, Xval, Yval)
+    testacc = evaluate(final_tree, Xtest, Ytest)
+    
+    print()
+    print("Final metrics after pruning")
+    print("Val acc:",valacc, 'Test acc:',testacc)
     
     

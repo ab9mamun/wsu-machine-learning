@@ -131,7 +131,8 @@ def kernelized_perceptron(Xtrain, Ytrain, Xtest, Ytest, problemNo):
     pass
 
 def decision_tree_problem(Xtrain, Ytrain,Xval,Yval, Xtest, Ytest, problemNo):
-    decision_tree.run(Xtrain, Ytrain, Xval,Yval, Xtest, Ytest, problemNo)
+    decision_tree.run(Xtrain, Ytrain, Xval,Yval, Xtest, Ytest, problemNo+"a,b")
+    decision_tree.run_with_pruning(Xtrain, Ytrain, Xval,Yval, Xtest, Ytest, problemNo+"c,d")
 
 
 def plot_graph(x, y, xlabel, ylabel, title):
