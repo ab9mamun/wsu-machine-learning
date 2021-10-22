@@ -6,21 +6,11 @@ Created on Mon Sep 20 18:15:31 2021
 """
 import pandas as pd
 
-from datamanager import read_data
-
-#
-#traindf, testdf = read_data()
-#
-#print(traindf.head())
-#print(testdf.head())
-#
-#train, test = traindf.values, testdf.values
-#Ytrain = train[:,0]
-#Xtrain = train[:,1:]
-#
-#print(Xtrain.shape)
-#print(Ytrain[:5])
-
-
+for i in range(-4, 5):
+    print(i)
 import sys
 print(sys.version_info)
+
+a = [(2,3.5), (0,1.5), (4,5.5)]
+a.remove((0,1.5))
+print(a)
