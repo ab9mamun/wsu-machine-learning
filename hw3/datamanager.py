@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+"""
+@author: Abdullah Mamun
+"""
+import pandas as pd
+import numpy as np
+
+def fileToVector(filename):
+    with open('data/'+filename) as f:
+        vector = f.read().strip().split('\n')
+    return vector
+
+def read_data():    
+    traindata = fileToVector('traindata.txt')
+    trainlabels = fileToVector('trainlabels.txt')
+    testdata = fileToVector('testdata.txt')
+    testlabels = fileToVector('testlabels.txt')
+    stoplist = fileToVector('stoplist.txt')
+    return traindata, trainlabels, testdata, testlabels, stoplist
+
+
+def readAndPreprocess(dryrun=False, classifier=None):
+    traindata, trainlabels, testdata, testlabels, stoplist = read_data()
+    trainlabels = np.array(trainlabels).astype(int)
+    testlabels = np.array(testlabels).astype(int)
+    
+    return traindata, trainlabels, testdata, testlabels, stoplist
+
+
+def build_vocabulary(traindata, stoplist):
+    vocab = []
+    for row in traindata:
+        words = row.split()
+        for word in words:
+            if word not in vocab and word not in stoplist:
+                vocab.append(word)
+                
+    vocab.sort()
+    
+    print(vocab)
+    return vocab
