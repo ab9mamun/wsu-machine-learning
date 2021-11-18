@@ -20,4 +20,12 @@ def plot_graph(x, y, xlabel, ylabel, title):
         pass
     plt.show()
     
-        
+    
+    
+    
+def get_priors(Ytrain):
+    n = len(ytrain)
+    n0 = np.count_nonzero(ytrain)
+    n1 = n - n0
+    
+    return n0/n, n1/n

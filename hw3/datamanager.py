@@ -37,7 +37,7 @@ def build_vocabulary(traindata, stoplist):
                 
     vocab.sort()
     
-    print(vocab)
+    #print(vocab)
     return vocab
 
 
@@ -47,3 +47,17 @@ def build_vocab_map(vocab):
         vocab_map[vocab[i]] = i
         
     return vocab_map
+
+
+def create_feature_vectors(data, vocab_map, M, stoplist):
+    X = np.zeros((len(data),M))
+    for i in range(len(data)):
+        words = data[i].split()
+        for word in words:
+            if word not in stoplist:
+                X[i, vocab_map[word]] = 1
+    
+    return X
+    
+    pass
+
