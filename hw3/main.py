@@ -21,7 +21,11 @@ def main():
     
     traindata, trainlabels, testdata, testlabels, stoplist =  readAndPreprocess(dryrun=dryrun) #method from datamanager
     vocab = build_vocabulary(traindata, stoplist)
+    vocab_map = build_vocab_map(vocab) #create a map/dictionary for vocabulary (key = word, value = index)
+    
+    Xtrain, Ytrain = create_feature_vectors(vocab_map)
     #the vocabulary is ready
+    
     
     
     

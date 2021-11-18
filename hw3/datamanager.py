@@ -39,3 +39,11 @@ def build_vocabulary(traindata, stoplist):
     
     print(vocab)
     return vocab
+
+
+def build_vocab_map(vocab):
+    vocab_map = {}
+    for i in range(len(vocab)):
+        vocab_map[vocab[i]] = i
+        
+    return vocab_map
