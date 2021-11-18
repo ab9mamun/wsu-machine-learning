@@ -1,0 +1,17 @@
+Naive Bayes implementation starts
+The prior beliefs---
+P(y=0) = 0.4720496894409938 P(y=1) = 0.5279503105590062
+Calculated P(x | y=0) for all words in the vocabulary
+Calculated P(x | y=1) for all words in the vocabulary
+Calculated Training predictions: 
+Training accuracy: 0.9627329192546584
+Calculated Test predictions: 
+Test accuracy: 0.7326732673267327
+
+Validating with scikit-learn
+Train Acc of scikit: 0.9596273291925466
+Test Acc of scikit: 0.8316831683168316
+Our NaiveBayes and scikit disagree on 5 out of 322 training examples
+Our NaiveBayes and scikit disagree on 14 out of 101 test examples
+
+You can also check trainpredictions.csv and testpredictions.csv to see the individual predictions

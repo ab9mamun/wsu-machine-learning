@@ -55,9 +55,9 @@ def create_feature_vectors(data, vocab_map, M, stoplist):
         words = data[i].split()
         for word in words:
             if word not in stoplist:
-                X[i, vocab_map[word]] = 1
+                j = vocab_map.get(word) # j is the index of the word in the vocabulary
+                if j is not None: #j is None for unseen data, we can safely ignore them as they create equal likelihood for the positive and negative classes 
+                    X[i, j] = 1
     
     return X
     
-    pass
-
