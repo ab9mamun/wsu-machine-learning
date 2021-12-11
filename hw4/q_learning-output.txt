@@ -1,0 +1,747 @@
+Eps greedy method started...
+Eps: 0.1
+Reward table:
+[[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0. -1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0. -1. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1. -1.  0. -1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0. -1.  0.]
+ [ 0.  0.  0. -1.  0. -1. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]]
+Positions of the walls:
+[[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 1. 1. 1. 0. 1. 1. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]]
+Trial: 1 Iteration taken to converge: 31666
+Trial: 2 Iteration taken to converge: 927637
+Q table:
+state (cell_i-cell_j), >, <, ^, v
+(0-0),0.0,0.0,0.0,0.0
+(0-1),0.0,0.0,0.0,0.0
+(0-2),0.0,0.0,0.0,0.0
+(0-3),0.0,0.0,0.0,0.0
+(0-4),0.0,0.0,0.0,0.0
+(0-5),0.0,0.0,0.0,0.0
+(0-6),0.0,0.0,0.0,0.0
+(0-7),0.0,0.0,0.0,0.0
+(0-8),0.0,0.0,0.0,0.0
+(0-9),0.0,0.0,0.0,0.0
+(1-0),0.0,0.0,0.0,0.0
+(1-1),0.0,0.0,0.0,0.0
+(1-2),0.0,0.0,0.0,0.0
+(1-3),0.0,0.0,0.0,0.0
+(1-4),0.0,0.0,0.0,0.0
+(1-5),0.0,0.0,0.0,0.0
+(1-6),0.0,0.0,0.0,0.0
+(1-7),0.0,0.0,0.0,0.0
+(1-8),0.0,0.0,0.0,0.0
+(1-9),0.0,0.0,0.0,0.0
+(2-0),0.0,0.0,0.0,0.0
+(2-1),0.0,0.0,0.0,0.0
+(2-2),0.0,0.0,0.0,0.0
+(2-3),0.0,0.0,0.0,0.0
+(2-4),0.0,0.0,0.0,0.0
+(2-5),0.0,0.0,0.0,0.0
+(2-6),0.0,0.0,0.0,0.0
+(2-7),0.0,0.0,0.0,0.0
+(2-8),0.0,0.0,0.0,0.0
+(2-9),0.0,0.0,0.0,0.0
+(3-0),0.0,0.0,0.0,0.0
+(3-1),0.0,0.0,0.0,0.0
+(3-2),0.0,0.0,0.0,0.0
+(3-3),0.0,0.0,0.0,0.0
+(3-4),0.0,0.0,0.0,0.0
+(3-5),0.0,0.0,0.0,0.0
+(3-6),0.0,0.0,0.0,0.0
+(3-7),0.0,0.0,0.0,0.0
+(3-8),0.0,0.0,0.0,0.0
+(3-9),0.0,0.0,0.0,0.0
+(4-0),0.0,0.0,0.0,0.0
+(4-1),0.0,0.0,0.0,0.0
+(4-2),0.0,0.0,0.0,0.0
+(4-3),0.0,0.0,0.0,0.0
+(4-4),0.0,0.0,0.0,0.0
+(4-5),-1.0,0.0,0.0,0.0
+(4-6),-1.0,-1.0,-1.9,-1.0
+(4-7),0.0,0.0,0.0,0.0
+(4-8),0.0,0.0,-0.9,0.0
+(4-9),0.0,0.0,0.0,0.0
+(5-0),0.0,0.0,0.0,0.0
+(5-1),0.0,0.0,0.0,0.0
+(5-2),0.0,0.0,0.0,0.0
+(5-3),0.0,0.0,0.0,0.0
+(5-4),0.0,0.0,0.0,0.0
+(5-5),0.0,0.0,0.0,0.0
+(5-6),-1.0,-1.0,-1.0,-1.0
+(5-7),-0.9,-0.9,0.0,0.0
+(5-8),-1.0,-1.0,-1.9,-1.0
+(5-9),0.0,-0.9,0.0,0.0
+(6-0),0.0,0.0,0.0,0.0
+(6-1),0.0,0.0,0.0,0.0
+(6-2),0.0,0.0,0.0,0.0
+(6-3),0.0,0.0,0.0,0.0
+(6-4),0.0,0.0,0.0,0.0
+(6-5),0.0,0.0,0.0,0.0
+(6-6),0.0,0.0,-0.9,-0.9
+(6-7),-0.9,0.0,0.0,0.0
+(6-8),-1.0,-1.0,-1.0,-1.9
+(6-9),0.0,-0.9,0.0,0.0
+(7-0),0.0,0.0,0.0,0.0
+(7-1),0.0,0.0,0.0,0.0
+(7-2),0.0,0.0,0.0,0.0
+(7-3),0.0,0.0,0.0,0.0
+(7-4),0.0,0.0,0.0,0.0
+(7-5),-1.0,0.0,0.0,0.0
+(7-6),-1.0,-1.0,-1.0,-1.0
+(7-7),0.0,-0.9,0.0,0.0
+(7-8),0.0,0.0,0.0,-0.9
+(7-9),0.0,0.0,0.0,0.0
+(8-0),0.0,0.0,0.0,0.0
+(8-1),0.0,0.0,0.0,0.0
+(8-2),0.0,0.0,0.0,0.0
+(8-3),0.0,0.0,0.0,0.0
+(8-4),0.0,0.0,0.0,0.0
+(8-5),0.0,0.0,0.0,0.0
+(8-6),0.0,0.0,0.0,0.0
+(8-7),0.0,0.0,0.0,0.0
+(8-8),0.0,0.0,0.0,0.0
+(8-9),0.0,0.0,0.0,0.0
+(9-0),0.0,0.0,0.0,0.0
+(9-1),0.0,0.0,0.0,0.0
+(9-2),0.0,0.0,0.0,0.0
+(9-3),0.0,0.0,0.0,0.0
+(9-4),0.0,0.0,0.0,0.0
+(9-5),0.0,0.0,0.0,0.0
+(9-6),0.0,0.0,0.0,0.0
+(9-7),0.0,0.0,0.0,0.0
+(9-8),0.0,0.0,0.0,0.0
+(9-9),0.0,0.0,0.0,0.0
+
+Eps greedy method started...
+Eps: 0.2
+Reward table:
+[[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0. -1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0. -1. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1. -1.  0. -1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0. -1.  0.]
+ [ 0.  0.  0. -1.  0. -1. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]]
+Positions of the walls:
+[[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 1. 1. 1. 0. 1. 1. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]]
+Trial: 1 Iteration taken to converge: 5285
+Trial: 2 Iteration taken to converge: 15579
+Trial: 3 Iteration taken to converge: 52802
+Trial: 4 Iteration taken to converge: 46837
+Q table:
+state (cell_i-cell_j), >, <, ^, v
+(0-0),0.0,0.0,0.0,0.0
+(0-1),0.0,0.0,0.0,0.0
+(0-2),0.0,0.0,0.0,0.0
+(0-3),0.0,0.0,0.0,0.0
+(0-4),0.0,0.0,0.0,0.0
+(0-5),0.0,0.0,0.0,0.0
+(0-6),0.0,0.0,0.0,0.0
+(0-7),0.0,0.0,0.0,0.0
+(0-8),0.0,0.0,0.0,0.0
+(0-9),0.0,0.0,0.0,0.0
+(1-0),0.0,0.0,0.0,0.0
+(1-1),0.0,0.0,0.0,0.0
+(1-2),0.0,0.0,0.0,0.0
+(1-3),0.0,0.0,0.0,0.0
+(1-4),0.0,0.0,0.0,0.0
+(1-5),0.0,0.0,0.0,0.0
+(1-6),0.0,0.0,0.0,0.0
+(1-7),0.0,0.0,0.0,0.0
+(1-8),0.0,0.0,0.0,0.0
+(1-9),0.0,0.0,0.0,0.0
+(2-0),0.0,0.0,0.0,0.0
+(2-1),0.0,0.0,0.0,0.0
+(2-2),0.0,0.0,0.0,0.0
+(2-3),0.0,0.0,0.0,0.0
+(2-4),0.0,0.0,0.0,0.0
+(2-5),0.0,0.0,0.0,0.0
+(2-6),0.0,0.0,0.0,0.0
+(2-7),0.0,0.0,0.0,0.0
+(2-8),0.0,0.0,0.0,0.0
+(2-9),0.0,0.0,0.0,0.0
+(3-0),0.0,0.0,0.0,0.0
+(3-1),0.0,0.0,0.0,0.0
+(3-2),0.0,0.0,0.0,0.0
+(3-3),0.0,0.0,0.0,0.0
+(3-4),0.0,0.0,0.0,0.0
+(3-5),0.0,0.0,0.0,0.0
+(3-6),0.0,0.0,0.0,0.0
+(3-7),0.0,0.0,0.0,0.0
+(3-8),0.0,0.0,0.0,0.0
+(3-9),0.0,0.0,0.0,0.0
+(4-0),0.0,0.0,0.0,0.0
+(4-1),0.0,0.0,0.0,0.0
+(4-2),0.0,0.0,0.0,0.0
+(4-3),0.0,0.0,0.0,0.0
+(4-4),0.0,0.0,0.0,0.0
+(4-5),-1.0,0.0,0.0,0.0
+(4-6),-1.0,-1.0,-1.9,-1.0
+(4-7),0.0,-0.9,0.0,0.0
+(4-8),0.0,0.0,-0.9,0.0
+(4-9),0.0,0.0,0.0,0.0
+(5-0),0.0,0.0,0.0,0.0
+(5-1),0.0,0.0,0.0,0.0
+(5-2),0.0,0.0,0.0,0.0
+(5-3),0.0,0.0,0.0,0.0
+(5-4),0.0,0.0,0.0,0.0
+(5-5),0.0,0.0,0.0,0.0
+(5-6),-1.0,-1.0,-1.0,-1.9
+(5-7),-0.9,-0.9,0.0,0.0
+(5-8),-1.0,-1.0,-1.9,-1.0
+(5-9),0.0,-0.9,0.0,0.0
+(6-0),0.0,0.0,0.0,0.0
+(6-1),0.0,0.0,0.0,0.0
+(6-2),0.0,0.0,0.0,0.0
+(6-3),0.0,0.0,0.0,0.0
+(6-4),0.0,0.0,0.0,0.0
+(6-5),0.0,0.0,0.0,0.0
+(6-6),0.0,0.0,-0.9,-0.9
+(6-7),-0.9,0.0,0.0,0.0
+(6-8),-1.0,-1.0,-1.0,-1.9
+(6-9),0.0,-0.9,0.0,0.0
+(7-0),0.0,0.0,0.0,0.0
+(7-1),0.0,0.0,0.0,0.0
+(7-2),0.0,0.0,0.0,0.0
+(7-3),0.0,0.0,0.0,0.0
+(7-4),0.0,0.0,0.0,0.0
+(7-5),-1.9,-1.0,-1.0,-1.0
+(7-6),-1.0,-1.0,-1.0,-1.0
+(7-7),0.0,-0.9,0.0,0.0
+(7-8),0.0,0.0,0.0,-0.9
+(7-9),0.0,0.0,0.0,0.0
+(8-0),0.0,0.0,0.0,0.0
+(8-1),0.0,0.0,0.0,0.0
+(8-2),0.0,0.0,0.0,0.0
+(8-3),0.0,0.0,0.0,0.0
+(8-4),0.0,0.0,0.0,0.0
+(8-5),0.0,0.0,0.0,0.0
+(8-6),0.0,0.0,0.0,0.0
+(8-7),0.0,0.0,0.0,0.0
+(8-8),0.0,0.0,0.0,0.0
+(8-9),0.0,0.0,0.0,0.0
+(9-0),0.0,0.0,0.0,0.0
+(9-1),0.0,0.0,0.0,0.0
+(9-2),0.0,0.0,0.0,0.0
+(9-3),0.0,0.0,0.0,0.0
+(9-4),0.0,0.0,0.0,0.0
+(9-5),0.0,0.0,0.0,0.0
+(9-6),0.0,0.0,0.0,0.0
+(9-7),0.0,0.0,0.0,0.0
+(9-8),0.0,0.0,0.0,0.0
+(9-9),0.0,0.0,0.0,0.0
+
+Eps greedy method started...
+Eps: 0.3
+Reward table:
+[[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0. -1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0. -1. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1. -1.  0. -1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0. -1.  0.]
+ [ 0.  0.  0. -1.  0. -1. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]]
+Positions of the walls:
+[[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 1. 1. 1. 0. 1. 1. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]]
+Trial: 1 Iteration taken to converge: 4003
+Trial: 2 Iteration taken to converge: 1616
+Trial: 3 Iteration taken to converge: 1635
+Trial: 4 Iteration taken to converge: 12508
+Trial: 5 Iteration taken to converge: 12770
+Trial: 6 Iteration taken to converge: 27315
+Trial: 7 Iteration taken to converge: 6472
+Trial: 8 Iteration taken to converge: 6749
+Trial: 9 Iteration taken to converge: 38905
+Q table:
+state (cell_i-cell_j), >, <, ^, v
+(0-0),0.0,0.0,0.0,0.0
+(0-1),0.0,0.0,0.0,0.0
+(0-2),0.0,0.0,0.0,0.0
+(0-3),0.0,0.0,0.0,0.0
+(0-4),0.0,0.0,0.0,0.0
+(0-5),0.0,0.0,0.0,0.0
+(0-6),0.0,0.0,0.0,0.0
+(0-7),0.0,0.0,0.0,0.0
+(0-8),0.0,0.0,0.0,0.0
+(0-9),0.0,0.0,0.0,0.0
+(1-0),0.0,0.0,0.0,0.0
+(1-1),0.0,0.0,0.0,0.0
+(1-2),0.0,0.0,0.0,0.0
+(1-3),0.0,0.0,0.0,0.0
+(1-4),0.0,0.0,0.0,0.0
+(1-5),0.0,0.0,0.0,0.0
+(1-6),0.0,0.0,0.0,0.0
+(1-7),0.0,0.0,0.0,0.0
+(1-8),0.0,0.0,0.0,0.0
+(1-9),0.0,0.0,0.0,0.0
+(2-0),0.0,0.0,0.0,0.0
+(2-1),0.0,0.0,0.0,0.0
+(2-2),0.0,0.0,0.0,0.0
+(2-3),0.0,0.0,0.0,0.0
+(2-4),0.0,0.0,0.0,0.0
+(2-5),0.0,0.0,0.0,0.0
+(2-6),0.0,0.0,0.0,0.0
+(2-7),0.0,0.0,0.0,0.0
+(2-8),0.0,0.0,0.0,0.0
+(2-9),0.0,0.0,0.0,0.0
+(3-0),0.0,0.0,0.0,0.0
+(3-1),0.0,0.0,0.0,0.0
+(3-2),0.0,0.0,0.0,0.0
+(3-3),0.0,0.0,0.0,0.0
+(3-4),0.0,0.0,0.0,0.0
+(3-5),0.0,0.0,0.0,0.0
+(3-6),0.0,0.0,-0.9,0.0
+(3-7),0.0,0.0,0.0,0.0
+(3-8),0.0,0.0,0.0,0.0
+(3-9),0.0,0.0,0.0,0.0
+(4-0),0.0,0.0,0.0,0.0
+(4-1),0.0,0.0,0.0,0.0
+(4-2),0.0,0.0,0.0,0.0
+(4-3),0.0,0.0,0.0,0.0
+(4-4),0.0,0.0,0.0,0.0
+(4-5),-1.0,0.0,-1.0,0.0
+(4-6),-1.0,-1.0,-1.9,-1.0
+(4-7),0.0,-0.9,0.0,0.0
+(4-8),0.0,0.0,-0.9,0.0
+(4-9),0.0,0.0,0.0,0.0
+(5-0),0.0,0.0,0.0,0.0
+(5-1),0.0,0.0,0.0,0.0
+(5-2),0.0,0.0,0.0,0.0
+(5-3),0.0,0.0,0.0,0.0
+(5-4),0.0,0.0,0.0,0.0
+(5-5),0.0,0.0,0.0,0.0
+(5-6),-1.0,-1.0,-1.0,-1.9
+(5-7),-0.9,-0.9,0.0,0.0
+(5-8),-1.0,-1.0,-1.9,-1.0
+(5-9),0.0,-0.9,0.0,0.0
+(6-0),0.0,0.0,0.0,0.0
+(6-1),0.0,0.0,0.0,0.0
+(6-2),0.0,0.0,0.0,0.0
+(6-3),0.0,0.0,-0.9,0.0
+(6-4),0.0,0.0,0.0,0.0
+(6-5),0.0,0.0,-0.9,0.0
+(6-6),0.0,0.0,-0.9,-0.9
+(6-7),-0.9,0.0,0.0,0.0
+(6-8),-1.0,-1.0,-1.0,-1.9
+(6-9),0.0,-0.9,0.0,0.0
+(7-0),0.0,0.0,0.0,0.0
+(7-1),0.0,0.0,0.0,0.0
+(7-2),0.0,0.0,0.0,0.0
+(7-3),-1.0,-1.0,-1.0,-1.0
+(7-4),-0.9,-0.9,0.0,0.0
+(7-5),-1.9,-1.0,-1.0,-1.0
+(7-6),-1.0,-1.9,-1.0,-1.0
+(7-7),0.0,-0.9,0.0,0.0
+(7-8),0.0,0.0,0.0,-0.9
+(7-9),0.0,0.0,0.0,0.0
+(8-0),0.0,0.0,0.0,0.0
+(8-1),0.0,0.0,0.0,0.0
+(8-2),0.0,0.0,0.0,0.0
+(8-3),0.0,0.0,0.0,0.0
+(8-4),0.0,0.0,0.0,0.0
+(8-5),0.0,0.0,0.0,0.0
+(8-6),0.0,0.0,0.0,0.0
+(8-7),0.0,0.0,0.0,0.0
+(8-8),0.0,0.0,0.0,0.0
+(8-9),0.0,0.0,0.0,0.0
+(9-0),0.0,0.0,0.0,0.0
+(9-1),0.0,0.0,0.0,0.0
+(9-2),0.0,0.0,0.0,0.0
+(9-3),0.0,0.0,0.0,0.0
+(9-4),0.0,0.0,0.0,0.0
+(9-5),0.0,0.0,0.0,0.0
+(9-6),0.0,0.0,0.0,0.0
+(9-7),0.0,0.0,0.0,0.0
+(9-8),0.0,0.0,0.0,0.0
+(9-9),0.0,0.0,0.0,0.0
+
+Boltzman exploitation method started...
+Reward table:
+[[ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0. -1.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0. -1. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  1. -1.  0. -1.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0. -1.  0.]
+ [ 0.  0.  0. -1.  0. -1. -1.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]
+ [ 0.  0.  0.  0.  0.  0.  0.  0.  0.  0.]]
+Positions of the walls:
+[[0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 1. 1. 1. 0. 1. 1. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]]
+Trial: 1 Iteration taken to converge: 576
+Trial: 2 Iteration taken to converge: 607
+Trial: 3 Iteration taken to converge: 91
+Trial: 4 Iteration taken to converge: 235
+Trial: 5 Iteration taken to converge: 545
+Trial: 6 Iteration taken to converge: 200
+Trial: 7 Iteration taken to converge: 134
+Trial: 8 Iteration taken to converge: 142
+Trial: 9 Iteration taken to converge: 137
+Trial: 10 Iteration taken to converge: 175
+Trial: 11 Iteration taken to converge: 123
+Trial: 12 Iteration taken to converge: 171
+Trial: 13 Iteration taken to converge: 500
+Trial: 14 Iteration taken to converge: 129
+Trial: 15 Iteration taken to converge: 476
+Trial: 16 Iteration taken to converge: 236
+Trial: 17 Iteration taken to converge: 41
+Trial: 18 Iteration taken to converge: 151
+Trial: 19 Iteration taken to converge: 48
+Trial: 20 Iteration taken to converge: 133
+Trial: 21 Iteration taken to converge: 533
+Trial: 22 Iteration taken to converge: 323
+Trial: 23 Iteration taken to converge: 182
+Trial: 24 Iteration taken to converge: 103
+Trial: 25 Iteration taken to converge: 1055
+Trial: 26 Iteration taken to converge: 60
+Trial: 27 Iteration taken to converge: 146
+Trial: 28 Iteration taken to converge: 291
+Trial: 29 Iteration taken to converge: 334
+Trial: 30 Iteration taken to converge: 278
+Trial: 31 Iteration taken to converge: 546
+Trial: 32 Iteration taken to converge: 348
+Trial: 33 Iteration taken to converge: 314
+Trial: 34 Iteration taken to converge: 169
+Trial: 35 Iteration taken to converge: 952
+Trial: 36 Iteration taken to converge: 692
+Trial: 37 Iteration taken to converge: 213
+Trial: 38 Iteration taken to converge: 37
+Trial: 39 Iteration taken to converge: 684
+Trial: 40 Iteration taken to converge: 137
+Trial: 41 Iteration taken to converge: 390
+Trial: 42 Iteration taken to converge: 67
+Trial: 43 Iteration taken to converge: 758
+Trial: 44 Iteration taken to converge: 164
+Trial: 45 Iteration taken to converge: 184
+Trial: 46 Iteration taken to converge: 265
+Trial: 47 Iteration taken to converge: 912
+Trial: 48 Iteration taken to converge: 407
+Trial: 49 Iteration taken to converge: 97
+Trial: 50 Iteration taken to converge: 392
+Trial: 51 Iteration taken to converge: 399
+Trial: 52 Iteration taken to converge: 264
+Trial: 53 Iteration taken to converge: 244
+Trial: 54 Iteration taken to converge: 117
+Trial: 55 Iteration taken to converge: 522
+Trial: 56 Iteration taken to converge: 239
+Trial: 57 Iteration taken to converge: 362
+Trial: 58 Iteration taken to converge: 610
+Trial: 59 Iteration taken to converge: 329
+Trial: 60 Iteration taken to converge: 441
+Trial: 61 Iteration taken to converge: 232
+Trial: 62 Iteration taken to converge: 697
+Trial: 63 Iteration taken to converge: 111
+Trial: 64 Iteration taken to converge: 841
+Trial: 65 Iteration taken to converge: 107
+Trial: 66 Iteration taken to converge: 195
+Trial: 67 Iteration taken to converge: 434
+Trial: 68 Iteration taken to converge: 403
+Trial: 69 Iteration taken to converge: 1633
+Trial: 70 Iteration taken to converge: 273
+Trial: 71 Iteration taken to converge: 640
+Trial: 72 Iteration taken to converge: 1237
+Trial: 73 Iteration taken to converge: 144
+Trial: 74 Iteration taken to converge: 1014
+Trial: 75 Iteration taken to converge: 426
+Trial: 76 Iteration taken to converge: 81
+Trial: 77 Iteration taken to converge: 1267
+Trial: 78 Iteration taken to converge: 980
+Trial: 79 Iteration taken to converge: 574
+Trial: 80 Iteration taken to converge: 168
+Trial: 81 Iteration taken to converge: 354
+Trial: 82 Iteration taken to converge: 299
+Trial: 83 Iteration taken to converge: 398
+Trial: 84 Iteration taken to converge: 736
+Trial: 85 Iteration taken to converge: 878
+Trial: 86 Iteration taken to converge: 221
+Trial: 87 Iteration taken to converge: 120
+Trial: 88 Iteration taken to converge: 324
+Trial: 89 Iteration taken to converge: 1165
+Trial: 90 Iteration taken to converge: 286
+Trial: 91 Iteration taken to converge: 208
+Trial: 92 Iteration taken to converge: 197
+Trial: 93 Iteration taken to converge: 826
+Trial: 94 Iteration taken to converge: 308
+Trial: 95 Iteration taken to converge: 758
+Trial: 96 Iteration taken to converge: 187
+Trial: 97 Iteration taken to converge: 87
+Trial: 98 Iteration taken to converge: 339
+Trial: 99 Iteration taken to converge: 72
+Trial: 100 Iteration taken to converge: 1108
+Trial: 101 Iteration taken to converge: 407
+Trial: 102 Iteration taken to converge: 1167
+Trial: 103 Iteration taken to converge: 136
+Trial: 104 Iteration taken to converge: 944
+Trial: 105 Iteration taken to converge: 1458
+Trial: 106 Iteration taken to converge: 327
+Trial: 107 Iteration taken to converge: 620
+Trial: 108 Iteration taken to converge: 117
+Trial: 109 Iteration taken to converge: 241
+Trial: 110 Iteration taken to converge: 582
+Trial: 111 Iteration taken to converge: 226
+Trial: 112 Iteration taken to converge: 1156
+Trial: 113 Iteration taken to converge: 65
+Trial: 114 Iteration taken to converge: 427
+Trial: 115 Iteration taken to converge: 53
+Trial: 116 Iteration taken to converge: 220
+Trial: 117 Iteration taken to converge: 41
+Trial: 118 Iteration taken to converge: 399
+Trial: 119 Iteration taken to converge: 1025
+Trial: 120 Iteration taken to converge: 359
+Trial: 121 Iteration taken to converge: 533
+Trial: 122 Iteration taken to converge: 1011
+Trial: 123 Iteration taken to converge: 140
+Trial: 124 Iteration taken to converge: 214
+Trial: 125 Iteration taken to converge: 226
+Trial: 126 Iteration taken to converge: 376
+Trial: 127 Iteration taken to converge: 595
+Trial: 128 Iteration taken to converge: 551
+Trial: 129 Iteration taken to converge: 851
+Trial: 130 Iteration taken to converge: 1127
+Trial: 131 Iteration taken to converge: 153
+Trial: 132 Iteration taken to converge: 1347
+Trial: 133 Iteration taken to converge: 239
+Trial: 134 Iteration taken to converge: 510
+Trial: 135 Iteration taken to converge: 2629
+Trial: 136 Iteration taken to converge: 90
+Trial: 137 Iteration taken to converge: 284
+Trial: 138 Iteration taken to converge: 547
+Trial: 139 Iteration taken to converge: 303
+Trial: 140 Iteration taken to converge: 755
+Trial: 141 Iteration taken to converge: 42
+Trial: 142 Iteration taken to converge: 89
+Trial: 143 Iteration taken to converge: 765
+Trial: 144 Iteration taken to converge: 1720
+Trial: 145 Iteration taken to converge: 1610
+Trial: 146 Iteration taken to converge: 340
+Trial: 147 Iteration taken to converge: 274
+Trial: 148 Iteration taken to converge: 129
+Trial: 149 Iteration taken to converge: 156
+Trial: 150 Iteration taken to converge: 1511
+Trial: 151 Iteration taken to converge: 395
+Trial: 152 Iteration taken to converge: 275
+Trial: 153 Iteration taken to converge: 334
+Trial: 154 Iteration taken to converge: 513
+Trial: 155 Iteration taken to converge: 708
+Trial: 156 Iteration taken to converge: 37
+Trial: 157 Iteration taken to converge: 110
+Trial: 158 Iteration taken to converge: 31
+Trial: 159 Iteration taken to converge: 132
+Trial: 160 Iteration taken to converge: 108
+Trial: 161 Iteration taken to converge: 134
+Trial: 162 Iteration taken to converge: 420
+Trial: 163 Iteration taken to converge: 409
+Trial: 164 Iteration taken to converge: 694
+Trial: 165 Iteration taken to converge: 472
+Trial: 166 Iteration taken to converge: 98
+Trial: 167 Iteration taken to converge: 135
+Trial: 168 Iteration taken to converge: 362
+Trial: 169 Iteration taken to converge: 505
+Trial: 170 Iteration taken to converge: 456
+Trial: 171 Iteration taken to converge: 442
+Trial: 172 Iteration taken to converge: 209
+Trial: 173 Iteration taken to converge: 484
+Trial: 174 Iteration taken to converge: 242
+Trial: 175 Iteration taken to converge: 379
+Trial: 176 Iteration taken to converge: 253
+Trial: 177 Iteration taken to converge: 393
+Trial: 178 Iteration taken to converge: 339
+Trial: 179 Iteration taken to converge: 68
+Trial: 180 Iteration taken to converge: 278
+Trial: 181 Iteration taken to converge: 152
+Trial: 182 Iteration taken to converge: 149
+Trial: 183 Iteration taken to converge: 61
+Trial: 184 Iteration taken to converge: 1006
+Trial: 185 Iteration taken to converge: 1245
+Trial: 186 Iteration taken to converge: 266
+Trial: 187 Iteration taken to converge: 512
+Trial: 188 Iteration taken to converge: 234
+Trial: 189 Iteration taken to converge: 387
+Trial: 190 Iteration taken to converge: 63
+Trial: 191 Iteration taken to converge: 142
+Trial: 192 Iteration taken to converge: 1189
+Trial: 193 Iteration taken to converge: 354
+Trial: 194 Iteration taken to converge: 673
+Trial: 195 Iteration taken to converge: 461
+Trial: 196 Iteration taken to converge: 691
+Trial: 197 Iteration taken to converge: 102
+Trial: 198 Iteration taken to converge: 320
+Trial: 199 Iteration taken to converge: 77
+Trial: 200 Iteration taken to converge: 480
+Trial: 201 Iteration taken to converge: 74
+Trial: 202 Iteration taken to converge: 547
+Trial: 203 Iteration taken to converge: 326
+Trial: 204 Iteration taken to converge: 646
+Trial: 205 Iteration taken to converge: 238
+Trial: 206 Iteration taken to converge: 1206
+Trial: 207 Iteration taken to converge: 669
+Trial: 208 Iteration taken to converge: 627
+Trial: 209 Iteration taken to converge: 98
+Trial: 210 Iteration taken to converge: 797
+Trial: 211 Iteration taken to converge: 243
+Trial: 212 Iteration taken to converge: 541
+Trial: 213 Iteration taken to converge: 62
+Trial: 214 Iteration taken to converge: 1163
+Trial: 215 Iteration taken to converge: 1110
+Trial: 216 Iteration taken to converge: 820
+Trial: 217 Iteration taken to converge: 610
+Trial: 218 Iteration taken to converge: 216
+Trial: 219 Iteration taken to converge: 260
+Trial: 220 Iteration taken to converge: 394
+Trial: 221 Iteration taken to converge: 457
+Trial: 222 Iteration taken to converge: 1325
+Trial: 223 Iteration taken to converge: 339
+Trial: 224 Iteration taken to converge: 284
+Trial: 225 Iteration taken to converge: 218
+Q table:
+state (cell_i-cell_j), >, <, ^, v
+(0-0),0.0,0.0,0.0,0.0
+(0-1),0.0,0.0,0.0,0.0
+(0-2),0.0,0.0,0.0,0.0
+(0-3),0.0,0.0,0.0,0.0
+(0-4),0.0,0.0,0.0,0.0
+(0-5),0.0,0.0,0.0,0.0
+(0-6),0.0,0.0,0.0,0.0
+(0-7),0.0,0.0,0.0,0.0
+(0-8),0.0,0.0,0.0,0.0
+(0-9),0.0,0.0,0.0,0.0
+(1-0),0.0,0.0,0.0,0.0
+(1-1),0.0,0.0,0.0,0.0
+(1-2),0.0,0.0,0.0,0.0
+(1-3),0.0,0.0,0.0,0.0
+(1-4),0.0,0.0,0.0,0.0
+(1-5),0.0,0.0,0.0,0.0
+(1-6),0.0,0.0,0.0,0.0
+(1-7),0.0,0.0,0.0,0.0
+(1-8),0.0,0.0,0.0,0.0
+(1-9),0.0,0.0,0.0,0.0
+(2-0),0.0,0.0,0.0,0.0
+(2-1),0.0,0.0,0.0,0.0
+(2-2),0.0,0.0,0.0,0.0
+(2-3),0.0,0.0,0.0,0.0
+(2-4),0.0,0.0,0.0,0.0
+(2-5),0.0,0.0,0.0,0.0
+(2-6),0.0,0.0,0.0,0.0
+(2-7),0.0,0.0,0.0,0.0
+(2-8),0.0,0.0,0.0,0.0
+(2-9),0.0,0.0,0.0,0.0
+(3-0),0.0,0.0,0.0,0.0
+(3-1),0.0,0.0,0.0,0.0
+(3-2),-0.9,0.0,0.0,0.0
+(3-3),-1.9,-1.0,-1.0,-1.9
+(3-4),0.0,0.0,0.0,0.0
+(3-5),0.0,0.0,-0.9,0.0
+(3-6),0.0,0.0,-0.9,0.0
+(3-7),0.0,0.0,0.0,0.0
+(3-8),0.0,0.0,0.0,0.0
+(3-9),0.0,0.0,0.0,0.0
+(4-0),0.0,0.0,0.0,0.0
+(4-1),0.0,0.0,0.0,0.0
+(4-2),0.0,0.0,0.0,0.0
+(4-3),0.0,0.0,0.0,-0.9
+(4-4),0.0,0.0,0.0,0.0
+(4-5),-1.9,-1.9,-1.0,-1.0
+(4-6),-1.0,-1.9,-1.9,-1.0
+(4-7),0.0,-0.9,0.0,0.0
+(4-8),0.0,0.0,-0.9,0.0
+(4-9),0.0,0.0,0.0,0.0
+(5-0),0.0,0.0,0.0,0.0
+(5-1),0.0,0.0,0.0,0.0
+(5-2),0.0,0.0,0.0,0.0
+(5-3),0.0,0.0,0.0,0.0
+(5-4),0.0,0.0,0.0,0.0
+(5-5),0.0,0.0,0.0,0.0
+(5-6),-1.0,-1.0,-1.0,-1.9
+(5-7),-0.9,-0.9,0.0,0.0
+(5-8),-1.0,-1.0,-1.9,-1.0
+(5-9),0.0,-0.9,0.0,0.0
+(6-0),0.0,0.0,0.0,0.0
+(6-1),0.0,0.0,0.0,0.0
+(6-2),0.0,0.0,0.0,0.0
+(6-3),0.0,0.0,-0.9,0.0
+(6-4),0.0,0.0,0.0,0.0
+(6-5),0.0,0.0,-0.9,0.0
+(6-6),0.0,0.0,-0.9,-0.9
+(6-7),-0.9,0.0,0.0,0.0
+(6-8),-1.0,-1.0,-1.0,-1.9
+(6-9),0.0,-0.9,0.0,0.0
+(7-0),0.0,0.0,0.0,0.0
+(7-1),0.0,0.0,0.0,0.0
+(7-2),-0.9,0.0,0.0,0.0
+(7-3),-1.0,-1.0,-1.0,-1.0
+(7-4),-0.9,-0.9,0.0,0.0
+(7-5),-1.9,-1.0,-1.0,-1.0
+(7-6),-1.0,-1.9,-1.0,-1.0
+(7-7),0.0,-0.9,0.0,0.0
+(7-8),0.0,0.0,0.0,-0.9
+(7-9),0.0,0.0,0.0,0.0
+(8-0),0.0,0.0,0.0,0.0
+(8-1),0.0,0.0,0.0,0.0
+(8-2),0.0,0.0,0.0,0.0
+(8-3),0.0,0.0,0.0,-0.9
+(8-4),0.0,0.0,0.0,0.0
+(8-5),0.0,0.0,0.0,-0.9
+(8-6),0.0,0.0,0.0,-0.9
+(8-7),0.0,0.0,0.0,0.0
+(8-8),0.0,0.0,0.0,0.0
+(8-9),0.0,0.0,0.0,0.0
+(9-0),0.0,0.0,0.0,0.0
+(9-1),0.0,0.0,0.0,0.0
+(9-2),0.0,0.0,0.0,0.0
+(9-3),0.0,0.0,0.0,0.0
+(9-4),0.0,0.0,0.0,0.0
+(9-5),0.0,0.0,0.0,0.0
+(9-6),0.0,0.0,0.0,0.0
+(9-7),0.0,0.0,0.0,0.0
+(9-8),0.0,0.0,0.0,0.0
+(9-9),0.0,0.0,0.0,0.0
+
