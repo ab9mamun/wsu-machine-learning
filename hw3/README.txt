@@ -10,8 +10,8 @@ stoplist.txt
 
 If you are on a Linux machine, you can do the following to run the code
 
-chmod +x script.sh
-./script.sh
+chmod +x run_code.sh
+./run_code.sh
 
 The script.sh file uses the python3 command to run the main.py file.
 If you have a GUI, then you can see the graphs opened in different windows. The program will also generate a png file and save it in in the directory from which the code is running.
